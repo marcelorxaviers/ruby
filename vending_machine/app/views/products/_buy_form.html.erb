@@ -1,0 +1,37 @@
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @product.name %></td>
+      <td><%= @product.price %></td>
+      <td><%= @product.quantity %></td>
+    </tr>
+  </tbody>
+</table>
+
+<% @errors.try(:each) do |message| %>
+  <div id="error_explanation"><%= message %></div>
+<% end %>
+
+<%= form_for(@product, url: product_buy_path(@product), method: :put) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= label :money, "Insert Money (1p,  £1)" %><br>
+    <%= text_field :money, :inserted %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Buy" %>
+  </div>
+<% end %>

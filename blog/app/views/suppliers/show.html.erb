@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @supplier.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @supplier.email %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @supplier.site %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @supplier.phone %>
+</p>
+
+<h2>Comments</h2>
+<div id="comments">
+  <%= render :partial => @supplier.comments.reverse %>
+</div>
+
+<%= form_for([@supplier, Comment.new], remote: true) do |f| %>
+  <p><%= f.label :body, "New Comment" %><br/>
+     <%= f.text_area :body %>
+  </p>
+  <p><%= f.submit "Add Comment" %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>

@@ -1,0 +1,26 @@
+<div id='messages'>
+  <ul id='messages-list'>
+    <% @current_messages.each do |message| %>
+      <li class='messages-list-item'>
+        <div class='messages-list-item-name'>
+          <%= message.user.uid %>:
+
+          <div class='messages-list-item-timestamp'>
+            (<%= l message.created_at, format: :short %>)
+          </div>
+        </div>
+        <div class='messages-list-item-body'>
+          <%= message.body %>
+
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id='message-form-wrapper'>
+  <%= form_for :message, url: '#post-message', html: { id: 'message-form' } do |f| %>
+    <%= f.text_area :body, id: 'message-form-body' %>
+    <%= f.submit id: 'message-form-submit' %>
+  <% end %>
+</div>

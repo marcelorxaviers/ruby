@@ -1,0 +1,28 @@
+<%- model_class = Company -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @company.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:salesforce_id) %>:</strong></dt>
+  <dd><%= @company.salesforce_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:salesforce_secret) %>:</strong></dt>
+  <dd><%= @company.salesforce_secret %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @company.user_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              company_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_company_path(@company), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              company_path(@company),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+  <%= link_to 'Join!', company_join_path(company), data: { confirm: 'Are you sure about joining in this company?' }, class: "btn btn-success" %>
+</div>

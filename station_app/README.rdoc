@@ -1,0 +1,11 @@
+= Station App
+
+App intended for studying rails and it is a POC showing how to use the zoho_wrapper gem ( http://github.com/marcelorxaviers/zoho_wrapper ).
+
+== Contributing to Station App
+* Pull requests with unit tests or specs and a version branch are welcomed.
+* Fork the project.
+* Start a feature/bugfix branch.
+* Commit and push as much as you want.
+* Make sure to add tests for it. 
+

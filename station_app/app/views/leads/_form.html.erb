@@ -1,0 +1,49 @@
+<%= form_for(@lead) do |f| %>
+  <% if @lead.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lead.errors.count, "error") %> prohibited this lead from being saved:</h2>
+
+      <ul>
+      <% @lead.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br />
+    <%= f.text_field :company_name %>
+  </div>
+  <div class="field">
+    <%= f.label :job_title %><br />
+    <%= f.text_field :job_title %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label "Leading company" %><br />
+    <%= f.collection_select(:company_id, @companies, :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

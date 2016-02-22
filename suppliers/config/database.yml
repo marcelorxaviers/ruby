@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: suppliers_development
+  pool: 5
+  username: postgres
+  password: postgres
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: suppliers_test
+  pool: 5
+  username: postgres
+  password: postgres
+cucumber:
+  <<: *test

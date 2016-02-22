@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<p>Changes: <%= @changes %></p>
+<p>Balance: <%= @balance %></p>
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pick</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+          <td><%= link_to 'Pick', product_pay_path(product) %></td>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+          <td><%= product.quantity %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Manage', new_product_path %>
