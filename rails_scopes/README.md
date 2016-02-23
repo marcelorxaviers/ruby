@@ -1,4 +1,4 @@
-# Zoho Wrapper
+# Rails Scopes
 
 A gem that wraps up some meta programmed scopes generators. This gem is an attempt to put together useful code generation for active records common scopes. 
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-As it relies on metaprogramming 
+As it relies on metaprogramming you just need to extend your active record
 
 ### Example code
 
