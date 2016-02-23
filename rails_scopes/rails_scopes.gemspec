@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "rails_scopes"
-  spec.version       = "0.0.2"
+  spec.version       = "0.0.3"
   spec.authors       = ["marcelorxs"]
   spec.email         = ["marcelorxs@gmail.com"]
   spec.summary       = "A gem for generating rails active record common scopes"
