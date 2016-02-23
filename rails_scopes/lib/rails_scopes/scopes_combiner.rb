@@ -1,6 +1,6 @@
 module RailsScopes
   module ScopesCombiner
-    def combined_methods_names(hash)
+    def combined_scopes_names(hash)
       2.upto(hash.size).map do |n|
         hash.keys.combination(n).map { |combined| combined.join('_or_') }
       end.flatten

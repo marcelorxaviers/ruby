@@ -18,11 +18,11 @@ describe RailsScopes::ScopesCombiner do
 	describe "RailsScopes::ScopesCombiner" do
 	
 	  it "extends ScopesCombiner" do
-      example.should respond_to :combined_methods_names
+      example.should respond_to :combined_scopes_names
     end
  
     it "creates methods for statuses" do
-      example.combined_methods_names(example.statuses).each do |name|
+      example.combined_scopes_names(example.statuses).each do |name|
         example.should respond_to name
       end
     end
