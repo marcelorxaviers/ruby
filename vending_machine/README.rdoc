@@ -1,5 +1,8 @@
 == README
 
+Running on heroku
+https://stormy-cliffs-6179.herokuapp.com/products
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
