@@ -3,8 +3,8 @@
 A gem that wraps up some meta programmed scopes generators. This gem is an attempt to put together useful code generation for active records common scopes. 
 
 Note: For now, as it is just a POC, it works with 2 different scopes generators: 
-  1. Combiner :arrow_right: that aims to create scopes based on hashs, like, status for a state machine.
-  2. Dates :arrow_right: for "less than equal", "greater than equal" and between
+  1. Combiner :arrow_right: Create 'or' scopes based on hashs, like, status for a state machine.
+  2. Dates :arrow_right: Create scopes for "less than equal", "greater than equal" and between
 
 ## Installation
 
