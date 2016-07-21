@@ -1,0 +1,1 @@
+/home/celo/repositories/toptal-api-ember/client/tmp/funnel-input_base_path-y8d2DUZc.tmp/0/utils/module-registry.js

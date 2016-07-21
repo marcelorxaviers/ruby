@@ -1,0 +1,31 @@
+<div class="row">
+  {{#if errorMessage}}
+    {{#each errorMessage as |m|}}
+      <div class="col-xs-8">
+        <label class="bg-danger">{{m}}</label>
+      </div>
+    {{/each}}
+  {{/if}}
+</div>
+<div class="col-xs-2">
+  <form {{action "submit" on="submit"}} class="form-inline" >
+    <label for="name">Name</label>
+    {{input value=user.name placeholder="enter name"  class="form-control"}}
+    <label for="email">Email</label>
+    {{input value=user.email placeholder="enter email"  class="form-control"}}
+    {{#if show}}
+      <label for="role">Role</label>
+      <select class="form-control" onchange={{action "selectRole" value="target.value"}}>
+        {{#each roles as |roleChoice|}}
+          <option value={{roleChoice}} selected={{eq user.role roleChoice}}>{{roleChoice}}</option>
+        {{/each}}
+      </select>
+    {{/if}}
+    <label for="password">Password</label>
+    {{input value=user.password type="password" placeholder="enter password"  class="form-control"}}
+    <label for="passwordConfirmation">Password Confirmation</label>
+    {{input value=user.password_confirmation type="password" placeholder="enter password again" class="form-control"}}
+    <hr>
+    <button type="submit" class="btn btn-primary">{{buttonText}}</button>
+  </form>
+</div>

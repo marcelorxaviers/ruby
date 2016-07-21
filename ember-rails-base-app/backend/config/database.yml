@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: toptal-api_development
+  username: 'postgres'
+  password: 'postgres'
+
+test:
+  <<: *default
+  database: toptal-api_test
+  username: 'postgres'
+  password: 'postgres'
+
+production:
+  <<: *default
+  database: toptal-api_production
+  username: 'postgres'
+  password: 'postgres'

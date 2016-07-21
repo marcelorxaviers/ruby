@@ -1,0 +1,1 @@
+/home/celo/repositories/toptal-api-ember/client/tmp/funnel-input_base_path-aoQugSm4.tmp/0/bower_components/ember-cli-test-loader/test-loader.js

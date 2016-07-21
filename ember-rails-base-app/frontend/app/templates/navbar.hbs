@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <div>
+      <a class="navbar-brand" href={{if session.isAuthenticated '#' 'login'}}>Sample App</a>
+    </div>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#" class="glyphicon glyphicon-home"></a></li>
+      {{#if session.isAuthenticated}}
+        {{#unless regular }}
+          <li><a href="users" class="glyphicon glyphicon-user"><span class="glyphicon glyphicon-user"></span></a></li>
+        {{/unless}}
+      {{/if}}
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {{#if session.isAuthenticated}}
+        {{#unless regular}}
+          <li><a {{action 'openModal'}}><span class="glyphicon glyphicon-user"></span> Add User</a></li>
+        {{/unless}}
+        <li><a href="users/edit" title="Edit Settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+        <li><a {{action 'deleteAfterConfirm'}} title="Logout"><span class="glyphicon glyphicon-trash"></span> Cancel Account</a></li>
+        <li><a {{action 'invalidateSession'}} title="Logout"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+      {{/if}}
+      {{#unless session.isAuthenticated}}
+        <li><a href="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+      {{/unless}}
+    </ul>
+  </div>
+</nav>

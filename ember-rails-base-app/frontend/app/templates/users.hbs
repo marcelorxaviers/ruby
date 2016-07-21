@@ -1,0 +1,27 @@
+{{#unless regular}}
+  <div class="col-xs-8">
+    <h2>Users</h2>
+    <h4>Click in member fields to edit</h4>
+    <table id="members_table" class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th colspan="5"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |user|}}
+          <tr>
+            <td>{{if user.name user.name '-'}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.role}}</td>
+            <td><a href="users/edit/{{user.id}}" class="glyphicon glyphicon-pencil"></a></td>
+            <td><a {{action 'deleteAfterConfirm' user}} class="glyphicon glyphicon-trash"></a></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+{{/unless}}

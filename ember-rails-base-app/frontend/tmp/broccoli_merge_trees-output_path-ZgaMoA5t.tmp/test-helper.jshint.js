@@ -1,0 +1,1 @@
+/home/celo/repositories/toptal-api-ember/client/tmp/broccoli_merge_trees-input_base_path-A9j2JDYA.tmp/0/test-helper.jshint.js

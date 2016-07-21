@@ -1,0 +1,1 @@
+{"modulePrefix":"client","environment":"test","baseURL":"/","locationType":"none","EmberENV":{"FEATURES":{}},"APP":{"LOG_ACTIVE_GENERATION":false,"LOG_VIEW_LOOKUPS":false,"rootElement":"#ember-testing","name":"client","version":"0.0.0+a4b50ed7"},"backend_host":"http://localhost:3000","backend_roles_url":"http://localhost:3000/api/users/roles","exportApplicationGlobal":true}

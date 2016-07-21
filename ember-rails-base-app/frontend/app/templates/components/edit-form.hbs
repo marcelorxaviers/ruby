@@ -1,0 +1,29 @@
+<div class="col-xs-2{{if errorMessage ' bg-danger' ''}}">
+  <form {{action "submit" on="submit"}}>
+    <label for="name">Name</label>
+    {{input value=user.name placeholder="enter name"  class="form-control"}}
+    <label for="email">Email</label>
+    {{input value=user.email placeholder="enter email"  class="form-control"}}
+    {{#if showPassword}}
+      <label for="password">New Password</label>
+      {{input value=user.password type="password" placeholder="enter password"  class="form-control"}}
+      <label for="passwordConfirmation">Password Confirmation</label>
+      {{input value=user.password_confirmation type="password" placeholder="enter password again" class="form-control"}}
+    {{/if}}
+    {{#if showRole}}
+      <label for="role">Role</label>
+      <select class="form-control" onchange={{action "selectRole" value="target.value"}}>
+        {{#each roles as |roleChoice|}}
+          <option value={{roleChoice}} selected={{eq user.role roleChoice}}>{{roleChoice}}</option>
+        {{/each}}
+      </select>
+    {{/if}}
+      {{input type="hidden" value="user.id" class="form-control"}}
+    <br>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href={{'users'}} class="btn btn-default">Back</a>
+  </form>
+  {{#if errorMessage}}
+    {{errorMessage}}
+  {{/if}}
+</div>

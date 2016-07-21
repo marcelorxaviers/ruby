@@ -1,0 +1,1 @@
+/home/celo/repositories/toptal-api-ember/client/app/resolver.js

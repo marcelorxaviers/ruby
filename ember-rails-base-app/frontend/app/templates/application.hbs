@@ -1,0 +1,7 @@
+{{partial 'navbar'}}
+{{#small-modal enabled=showModal title="Add user"}}
+  <div class="row">
+    {{signup-form user=user roles=roles show=true buttonText="Add" triggerSave=(action "save") errorMessage=errorMessage }}
+  </div>
+{{/small-modal}}
+{{outlet}}
