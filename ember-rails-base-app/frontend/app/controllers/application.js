@@ -18,6 +18,7 @@ export default Ember.Controller.extend({
   actions: {
     invalidateSession: function() {
       this.get('session').invalidate();
+      this.transitionToRoute('login');
     },
     openModal: function() {
       this.set('showModal', true);

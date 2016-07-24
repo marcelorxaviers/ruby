@@ -6,7 +6,7 @@
     </div>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#" class="glyphicon glyphicon-home"></a></li>
+      <li class="active"><a href={{if session.isAuthenticated '#' 'login'}} class="glyphicon glyphicon-home"></a></li>
       {{#if session.isAuthenticated}}
         {{#unless regular }}
           <li><a href="users" class="glyphicon glyphicon-user"><span class="glyphicon glyphicon-user"></span></a></li>
