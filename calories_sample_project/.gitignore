@@ -1,0 +1,6 @@
+backend/.git
+backend/.git/
+backend/.git/*
+frontend/.git
+frontend/.git/
+frontend/.git/*

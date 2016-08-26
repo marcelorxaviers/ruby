@@ -1,0 +1,15 @@
+<div class="col-xs-2{{if errors ' bg-danger' ''}}">
+  <form {{action "authenticate" on="submit"}}>
+    <label for="identification">Login (email)</label>
+    {{input value=identification placeholder="your@email" class="form-control"}}
+
+    <label for="password">Password</label>
+    {{input value=password type="password" placeholder="your password" class="form-control"}}
+    <br>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+
+  {{#if errors}}
+    {{errors}}
+  {{/if}}
+</div>

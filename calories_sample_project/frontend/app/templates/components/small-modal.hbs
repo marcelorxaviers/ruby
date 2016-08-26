@@ -1,0 +1,18 @@
+{{#if enabled}}
+  <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block; padding-right: 15px;">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button {{action "toggleModal"}} class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel">{{title}}</h4>
+        </div>
+        <div class="modal-body">
+          {{yield}}
+        </div>
+        <div class="modal-footer">
+          <button {{action "toggleModal"}} class="btn btn-default">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}

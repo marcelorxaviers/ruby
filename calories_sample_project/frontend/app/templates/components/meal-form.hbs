@@ -1,0 +1,33 @@
+<div class="row">
+  {{#if errorMessage}}
+    {{#each errorMessage as |m|}}
+      <div class="col-xs-8">
+        <label class="bg-danger">{{m}}</label>
+      </div>
+    {{/each}}
+  {{/if}}
+</div>
+<div class="col-xs-2">
+  <form {{action "submit" on="submit"}} class="form-inline">
+    <div class="form-group">
+      <label for="note">Note</label>
+      {{input value=meal.note placeholder="e.g. beef"  class="form-control"}}
+      <label for="calories">Calories</label>
+      {{input value=meal.calories placeholder="e.g. 120"  class="form-control"}}
+      <label for="day">Day</label>
+      {{bs-datetimepicker date=meal.day format='YYYY-MM-DD'}}
+      <label for="time">Time</label>
+      {{input value=meal.time placeholder="09:30"  class="form-control"}}
+      {{#if show}}
+        <label for="user_id">User</label>
+        <select class="form-control" onchange={{action "selectUser" value="target.value"}}>
+          {{#each users as |user|}}
+            <option value={{concat user.id ';' user.email}} selected={{eq meal.user user.email}}>{{user.email}}</option>
+          {{/each}}
+        </select>
+      {{/if}}
+      <hr>
+      <button type="submit" class="btn btn-primary">{{buttonText}}</button>
+    </div>
+  </form>
+</div>

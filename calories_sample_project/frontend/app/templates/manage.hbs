@@ -1,0 +1,5 @@
+{{#unless regular}}
+  <h2 id="title">User management</h2>
+
+  {{edit-form user=model.user roles=model.roles showRole=true triggerSave=(action "update") errorMessage=errorMessage}}
+{{/unless}}
