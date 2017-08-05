@@ -5,8 +5,10 @@ Enumerator.new do |yielder, base: 1, number: 1|
    base, number = number, (base + number)
   end
 end
-fibonacci.select { |f| (f % 3).zero? }.first(10) # Infinite loop
 
+puts "Comment the next line or else you'll be stuck on an infinite loop"
+# fibonacci.select { |f| (f % 3).zero? }.first(10) # Infinite loop
+puts "The line with the infinite loop is already commented, phew!"
 
 fibonacci =
 Enumerator.new do |yielder, base: 1, number: 1|
@@ -16,14 +18,3 @@ Enumerator.new do |yielder, base: 1, number: 1|
   end
 end.lazy
 fibonacci.select { |f| (f % 3).zero? }.first(10)
-
-module Ras
-  extend self
-  def ra
-    puts "'s al Ghul"
-  end
-end
-
-class AlGhul
-  include Ras
-end
