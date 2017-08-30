@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Rules index</h1>
+    <%= form_tag rules_path, class: "form-inline", method: :get do %>
+      <div class="form-group">
+        <%= text_field_tag :query, params[:query], class: "form-control" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    <table>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th></th>
+      </tr>
+      <% @rules.each do |rule| %>
+        <tr>
+          <td><%= best_in_place rule, :from_domain, as: :input %></td>
+          <td><%= best_in_place rule, :to_domain, as: :input %></td>
+          <td><%= link_to(t('delete'), { :controller => 'rules', :action => 'destroy', :id => rule.id } ,:method => :delete) %></td>
+        </tr>
+      <% end %>
+    </table>
+    <td><%= link_to(t('new'), { :controller => 'rules', :action => 'new' } ,:method => :get) %></td>
+  </body>
+</html>
+
