@@ -92,6 +92,8 @@ module Hashable
       end
 
       outer_columns_names -= including
+      return including if outer_columns_names.empty?
+
       one_to_one_associations.reduce(Set.new(including)) do |result, association|
         outer = association.klass.column_names.select do |column|
           outer_columns_names.include?(column)
